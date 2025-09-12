@@ -1,0 +1,9 @@
+Use camelCase (myMethodName) or snake_case (my_method_name).
+Use indentations.
+Comment code.
+At the top of each method, explain the functionality and include their inputs and outputs.
+
+Within each method, explain complex code chunks
+
+Use descriptive names (e.g. userInput instead of ui).
+Limit to 80 charcters per line for readability.
