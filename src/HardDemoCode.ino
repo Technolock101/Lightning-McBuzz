@@ -29,8 +29,8 @@
 #define I2C_SDA 6
 #define I2C_SCL 7
 
-#define LDR_LEFT 4
-#define LDR_RIGHT 5
+#define LDR_LEFT 5
+#define LDR_RIGHT 4
 #define MOTOR_SLEEP 8
 
 // Motor A (Left Motor)
@@ -41,7 +41,8 @@
 #define MOTOR_B_IN1 2 
 #define MOTOR_B_IN2 3 
 
-#define BLACK_THRESHOLD 1000 // LDR value below which is considered 'black'
+#define BLACK_THRESHOLD_Left 600 // LDR value below which is considered 'black'
+#define BLACK_THRESHOLD_Right 300 // LDR value below which is considered 'black'
 #define MOTOR_SPEED 180      // (0 - 255) Motor speed
 
 
@@ -142,8 +143,8 @@ void loop() {
     int leftValue = analogRead(LDR_LEFT);
     int rightValue = analogRead(LDR_RIGHT);
 
-    bool leftBlack = leftValue < BLACK_THRESHOLD;
-    bool rightBlack = rightValue < BLACK_THRESHOLD;
+    bool leftBlack = leftValue < BLACK_THRESHOLD_Left;
+    bool rightBlack = rightValue < BLACK_THRESHOLD_Right;
     
     // PWM Motor Control (Line Following Logic)
     if (!leftBlack && rightBlack) {
